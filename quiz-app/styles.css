@@ -1,0 +1,160 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #9b91a2;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.container{
+    padding: 3rem;
+    background: #b19393;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.screen{
+    display: none;
+    padding: 2rem;
+    text-align: center;
+}
+
+.screen.active{
+    display: block;
+}
+
+#start-screen h1{
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #090707;
+}
+
+#start-screen p{
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+button{
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    background: #988484;
+    cursor: pointer;
+    padding: 15px 30px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover{
+    background: #9b91a2;
+}
+
+.quiz-header{
+    margin-bottom: 2rem;
+}
+
+#question-text{
+    color: #090707;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.quiz-info{
+    display: flex;
+    justify-content: space-between;
+    color: #0c0b0b;
+    margin-bottom: 10px;
+}
+
+.answers-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.answer-btn{
+    background-color: #aa9c9c;
+    color: #090707;
+    border: 2px solid #3e3636;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.answer-btn:hover{
+    background-color: #9b91a2;
+    color: #090707;
+}
+
+.answer-btn.correct{
+    background-color: rgb(67, 179, 75);
+    color: #0c0b0b;
+}
+
+.answer-btn.incorrect{
+    background-color: rgb(200, 101, 101);
+    color: #0c0b0b;
+}
+
+.progress-bar{
+    height: 10px;
+    background-color: #8d7c93;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.progress{
+    height: 100%;
+    background-color: #c1bac5;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#result-screen{
+    color: #0c0c0d;
+    margin-bottom: 30px;
+}
+
+.result-info{
+    margin: 18px;
+    background-color: #8b7a92;
+    border-radius: 10px;
+    border: 2px solid #9f9ba1;
+    padding: 20px;
+}
+
+.result-info p{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#result-message{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+@media(max-width: 500px){
+    .screen{
+        padding: 1rem;
+    }
+
+    #start-screen h1{
+        font-size: 2rem;
+    }
+}
