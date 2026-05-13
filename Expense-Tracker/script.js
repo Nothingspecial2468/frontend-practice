@@ -1,0 +1,7 @@
+const balanceEl = document.getElementById("balance")
+const incomeAmount = document.getElementById("income-amount")
+const expensesAmount = document.getElementById("expenses-amount")
+const transactionList = document.getElementById("transaction-list")
+const transactionForm = document.getElementById("transaction-form")
+const descriptionEl = document.getElementById("description")
+const amountEl = document.getElementById("amount")
