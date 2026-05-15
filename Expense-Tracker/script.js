@@ -1,8 +1,8 @@
 const balanceEl = document.getElementById("balance")
 const incomeAmount = document.getElementById("income-amount")
 const expensesAmount = document.getElementById("expenses-amount")
-const transactionList = document.getElementById("transaction-list")
-const transactionForm = document.getElementById("transaction-form")
+const transactionList = document.getElementById("transactions-list")
+const transactionForm = document.getElementById("transactions-form")
 const descriptionEl = document.getElementById("description")
 const amountEl = document.getElementById("amount")
 
@@ -22,7 +22,7 @@ function addTransaction(e){
         amount
     })
 
-    localStorage.setItem("transactions", JSON.stringify(transactions))
+    localStorage.setItem("transactions" , JSON.stringify(transactions))
 
     updateTransactionList()
     updateSummary()
@@ -33,9 +33,9 @@ function addTransaction(e){
 function updateTransactionList(){
     transactionList.innerHTML = ""
 
-    const sortedTransactions = [...transactions].reverse()
+    const sortedTransaction = [...transactions].reverse()
 
-    sortedTransactions.forEach((transaction)=>{
+    sortedTransaction.forEach((transaction)=>{
         const transactionEl = createTransactionElement(transaction)
         transactionList.appendChild(transactionEl)
     })
@@ -49,7 +49,7 @@ function createTransactionElement(transaction){
     li.innerHTML = `
         <span>${transaction.description}</span>
         <span>${formatCurrency(transaction.amount)}
-            <button class="delete-btn" onclick="deleteTransaction(${transaction.id})">X</button>
+            <button class="delete-btn" onclick="removeTransaction(${transaction.id})">X</button>
         </span>
     `
 
@@ -57,12 +57,13 @@ function createTransactionElement(transaction){
 }
 
 function updateSummary(){
-    const balance = transactions.reduce((acc, transaction)=> acc + transaction.amount, 0)
+    const balance = transactions.reduce((acc, transaction)=> acc + transaction.amount , 0)
+
     const income = transactions.filter((transaction)=> transaction.amount > 0)
-    .reduce((acc, transaction) => acc + transaction.amount, 0)
+    .reduce((acc, transaction)=> acc + transaction.amount , 0)
 
     const expenses = transactions.filter((transaction)=> transaction.amount < 0)
-    .reduce((acc, transaction) => acc + transaction.amount, 0)
+    .reduce((acc, transaction)=> acc + transaction.amount , 0)
 
     balanceEl.textContent = formatCurrency(balance)
     incomeAmount.textContent = formatCurrency(income)
@@ -76,7 +77,7 @@ function formatCurrency(number){
     }).format(number)
 }
 
-function deleteTransaction(id){
+function removeTransaction(id){
     transactions = transactions.filter(transaction=> transaction.id !== id)
     localStorage.setItem("transactions", JSON.stringify(transactions))
     updateTransactionList()
