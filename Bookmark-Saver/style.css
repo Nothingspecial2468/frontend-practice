@@ -5,6 +5,7 @@
 }
 
 body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: #f0f0e3;
     color: black;
     display: flex;
@@ -14,7 +15,7 @@ body{
 }
 
 .app-container{
-    background-color: #d8d8d3;
+    background-color: #d3d7d7;
     padding: 24px;
     border-radius: 8px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
@@ -26,9 +27,67 @@ body{
 h1{
     color: #2ecc71;
     margin-bottom: 20px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .input-container{
-    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
 }
+
+input{
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button{
+    background-color: #2ecc71;
+    font-size: 14px;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover{
+    background-color: #27ae60;
+}
+
+#bookmark-list{
+    list-style: none;
+    padding: 0;
+}
+
+#bookmark-list li{
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#bookmark-list a{
+    color: #2ecc71;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#bookmark-list button{
+    background-color: #e74c3c;
+    padding: 5px 10px;
+}
+
+#bookmark-list button:hover{
+    background-color: #81251b;
+}
+
