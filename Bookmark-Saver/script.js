@@ -18,18 +18,18 @@ addBtn.addEventListener("click", function(){
             alert("Please enter a valid URL starting with http:// or https://")
             return
         }
-
-        addBookmark(name,url)
+        
+        addBookmark(name, url)
         saveBookmark(name,url)
         bookmarkNameInput.value = ""
-        bookmarkUrl.value = ""
+        bookmarkUrl.value = ""  
     }
 })
 
 function addBookmark(name, url){
     const li = document.createElement("li")
     const link = document.createElement("a")
-    
+
     link.href = url
     link.textContent = name
     link.target = "_blank"
@@ -38,7 +38,7 @@ function addBookmark(name, url){
     removeBtn.textContent = "Remove"
     removeBtn.addEventListener("click", function(){
         bookmarkList.removeChild(li)
-        removeBookmarksFromStorage(name, url)
+        removeBookmarkFromStorage(name, url)
     })
 
     li.appendChild(link)
@@ -52,7 +52,7 @@ function getBookmarksFromStorage(){
     return bookmarks ? JSON.parse(bookmarks) : []
 }
 
-function saveBookmark(name, url){
+function saveBookmark(name,url){
     const bookmarks = getBookmarksFromStorage()
     bookmarks.push({name, url})
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks))
@@ -63,8 +63,8 @@ function loadBookmarks(){
     bookmarks.forEach((bookmark)=> addBookmark(bookmark.name, bookmark.url))
 }
 
-function removeBookmarksFromStorage(name, url){
+function removeBookmarkFromStorage(name, url){
     let bookmarks = getBookmarksFromStorage()
-    bookmarks= bookmarks.filter((bookmark)=> bookmark.name !== name || bookmark.url !== url)
+    bookmarks = bookmarks.filter((bookmark)=> bookmark.name !== name || bookmark.url !== url)
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks))
 }
