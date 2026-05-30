@@ -82,7 +82,7 @@ button{
     border-radius: 4px;
     cursor: pointer;
     padding: 10px;
-    margin-top: 1.2rem;
+    margin-top: 2rem;
     width: 100%;
     font-size: 16px;
     font-weight: bold;
@@ -94,4 +94,62 @@ button{
 
 button:hover{
     background-color: #115e91;
+}
+
+.modal-overlay{
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-overlay{
+    display: none;
+}
+
+.modal-overlay.active{
+    display: flex;
+}
+
+.success-modal{
+    background-color: rgb(230, 225, 219);
+    border-radius: 10px;
+    padding: 3rem;
+    text-align: center;
+    min-width: 350px;
+}
+ 
+.success-modal h2{
+    color: #2ecc71;
+    margin: 1rem 0;
+}
+
+.success-modal p{
+    margin-bottom: 1.5rem;
+}
+
+.emoji{
+    font-size: 4rem;
+}
+
+.success-modal{
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn{
+    from{
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
 }
