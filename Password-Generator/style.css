@@ -60,7 +60,7 @@ h1::after{
     border-radius: 8px;
     padding: 0 1rem 0 0;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(245, 244, 244, 0.4);
+    box-shadow: 0 2px 5px rgb(245, 244, 244);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -73,7 +73,7 @@ h1::after{
     border: none;
     background: transparent;
     letter-spacing: 1px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 5px rgba(216, 214, 214, 0.5);
     outline: none;
     border-radius: 10px;
 }
