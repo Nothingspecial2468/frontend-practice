@@ -199,7 +199,7 @@ body{
 
 .separator{
     font-size: 2rem;
-    font: weight 700;
+    font-weight: 700;
     color:var(--text-dim);
     opacity:0.5;
 }
@@ -347,7 +347,7 @@ body{
     }
 
     .logo{
-        margin: bottom 2rem;
+        margin-bottom: 2rem;
     }
 
     .countdown{
